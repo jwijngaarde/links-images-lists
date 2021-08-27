@@ -1,0 +1,23 @@
+h2 {
+  color: blueviolet;
+}
+
+body {
+  background: coral;
+
+  font: normal 16px Arial, Helvetica, sans-serif;
+
+  line-height: 1.6em;
+}
+
+.vb-1 {
+  background-color: silver;
+  border: 5px solid aquamarine;
+}
+
+.naam {
+  background: #d495fd;
+  float: auto;
+  padding: 0.1em;
+  width: 32em;
+}
