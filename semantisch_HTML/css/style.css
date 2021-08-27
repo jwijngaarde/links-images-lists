@@ -10,6 +10,19 @@ body {
   line-height: 1.6em;
 }
 
+.navigatie {
+  list-style-type: none;
+  margin: 0.9%;
+  padding: 5px 0px 3px 0px;
+  width: 15%;
+  float: left;
+  border: 2px solid crimson;
+  border-width: 3px;
+  display: inline-block;
+  background: ghostwhite;
+  text-align: center;
+}
+
 .vb-1 {
   background-color: silver;
   border: 5px solid aquamarine;
@@ -20,4 +33,24 @@ body {
   float: auto;
   padding: 0.1em;
   width: 32em;
+  border: 4px solid gold;
+}
+
+img {
+  border-radius: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 160px;
+  height: auto;
+  max-width: 50%;
+  float: initnoneial;
+  padding: 4px;
+  border: 1px solid royalblue;
+  margin: 4px 0 4px 4px;
+}
+.naam {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
