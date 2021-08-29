@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- hier zet je de code in de head tags -->
+        <title> My first webpage </title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="vb-1">
+
+        <header class="box-model">
+            <nav><div class="navigatie">
+                 <a href="index.html">Home</a>
+                 <a href="about.html">About</a>
+                 <a href="contact.html">Contact</a>
+                 <a href="recept.html">Recept</a>
+
+                 </div>
+            </nav>
+        </header>
+        <main>
+        <div class="container">
+            <form name="contact" method="POST" data-netlify="true"> 
+            <input type="hidden" name="form-name" value="contact">         
+              <input type="text" id="fname" name="naam" placeholder="Voor en achternaam..">
+          <br>
+              <input type="email" name="Email" required placeholder="Email..">
+          <br>
+            <input type="tel" name="telefoonnummer" id="telefoonnummer" pattern="^\d{10}$" required="required"
+            placeholder="Telefoonnummer">
+            <br>
+            <label for="name">Leeftijd: </label>
+            <input type="number" id="leeftijd" name="leeftijd" min="10" max="85" placeholder="30">
+         <br> <label for="geboortedatum">Geboortedatum:</label>
+         <input type="date" id="geboortedatum" name="Geboortedatum"> 
+          <br> <label>
+            <input type="radio" name="gender" value="male" checked>Man</label>
+          
+          <label>
+            <input type="radio" name="gender" value="female">Vrouw</label>
+          <br>  <input type="checkbox" id="taal1" name="taal1" value="Frans">
+          <label for="taal1">My favoriete cuisine Frans</label><br>
+          <input type="checkbox" id="taal2" name="taal2" value="">
+          <label for="taal2">My favoriete cuisine Italiaans</label><br>
+          <input type="checkbox" id="taal3" name="taal3" value="spaans">
+          <label for="taal3"> My favoriete cuisine Spaans</label><br>
+          <input type="checkbox" id="taal4" name="taal4" value="arabisch">
+          <label for="taal4"> My favoriete cuisine Arabisch</label><br>
+            <input type="color" name="colorpicker" id="Kleur van schort"> 
+            <label for="Kleur van schort">kleur van schort</label>   
+          <br> 
+            <textarea id="subject" name="subject" placeholder="Schrijf uw biografie.." style="height:200px"></textarea>
+          <br>
+          <input type="file" id="myFile" name="filename">
+          <input type="submit">
+          <br>
+          <h2>HTML Links</h2><a href="https://www.w3schools.com/">Bezoek Mijn eerste website!</a>
+
+          <br>
+          <input type="reset" value="Reset">
+          <button type="submit">Submit</button>          
+            </form>
+          </div>    
+            
+            <footer class="box-model">
+                <p>Hello world! it is my destiny to make stuff and cool things</p>
+            </footer>
+        </main> 
+        </div>
+    </body>
+   
+</html>
+           
+ 
