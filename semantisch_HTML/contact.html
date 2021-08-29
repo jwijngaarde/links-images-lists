@@ -16,19 +16,20 @@
                  </div>
             </nav>
         </header>
-            <h2 class="gegevens">Mijn gegevens</h2>
-        <main class="box-model">
-            <br>
-                <p>
-                    <img src="images/ajwijngaarde.jpg">
-                </p>
-            <p>
-                <ul><div class="naam">
-                    <li>Naam: Armand J Wijngaarde</li>
-                    <li>place to be 127.0.0.1</li>
-                </div> 
-                </ul>               
-            </p>
+        <main>
+        <div class="container">
+            <form name="contact" method="POST" data-netlify="true"> 
+            <input type="hidden" name="form-name" value="contact">         
+              <input type="text" id="fname" name="naam" placeholder="Voor en achternaam..">
+          <br>
+              <input type="email" name="Email" required placeholder="Email..">
+          <br>
+              <textarea id="subject" name="subject" placeholder="Schrijf uw bericht.." style="height:200px"></textarea>
+          <br>
+          <button type="submit">Submit</button>          
+            </form>
+          </div>    
+            
             <footer class="box-model">
                 <p>Hello world! it is my destiny to make stuff and cool things</p>
             </footer>
