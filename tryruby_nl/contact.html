@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- hier zet je de code in de head tags -->
+        <title> tryruby.nl </title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,600,700">
+    </head>
+    <body  class="centered-wrapper">
+        <div class="vb-1">
+
+        <header>
+            <ul class="navigatie">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="tutorials.html">Tutorials</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                 <li><a href="bronvermelding.html">Bron</a></li>
+                </ul></header>
+        <div class="container"><div class="box-model">
+            <main>
+
+            <form name="contact" method="POST" data-netlify="true"> 
+            <input type="hidden" name="form-name" value="contact">         
+              <input type="text" id="fname" name="naam" placeholder="Voor en achternaam..">
+          <br>
+              <input type="email" name="Email" required placeholder="Email..">
+          <br>
+            <input type="tel" name="telefoonnummer" id="telefoonnummer" pattern="^\d{10}$" required="required"
+            placeholder="Telefoonnummer">
+            <br>
+            <label for="name">Leeftijd: </label>
+            <input type="number" id="leeftijd" name="leeftijd" min="10" max="85" placeholder="25">
+         <br> <label for="geboortedatum">Geboortedatum:</label>
+         <input type="date" id="geboortedatum" name="Geboortedatum"> 
+          <br> <label>
+            <input type="radio" name="gender" value="male" checked>Man</label>
+           <label><input type="radio" name="gender" value="female" >Vrouw</label>
+            <br>
+            <div>
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio"></textarea>
+              </div>
+              <input type="hidden" name="hidden" value="hi" />
+            <div>
+          <br>
+          <input type="file" id="myFile" name="filename">
+          <input type="submit">
+          <br>
+          <h2>HTML Links</h2>
+          <div>
+            <label for="url">URL</label>
+            <input type="url" name="url" id="url" />
+          </div>
+  
+          <br>
+          <input type="reset" value="Reset">
+          <button type="submit">Submit</button>          
+          </div> 
+        </form>
+        <footer class="box-model">
+            <p>&copy; tryruby.nl</p>
+        </footer>
+       </div>
+    </div>
+    </main> 
+
+    </body>
+   
+</html>
+           
+ 
