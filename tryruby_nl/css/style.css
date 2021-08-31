@@ -42,79 +42,84 @@ body {
   border: 4px solid gold;
   width: 500px;
 }
-
+.zark {
+  text-align: center;
+}
 img {
   border-radius: 12px;
-  width: 160px;
+  width: auto;
   height: auto;
   float: none;
   padding: 4px;
   border: 1px solid royalblue;
+  display: block;
 }
-.naam {
-  padding: 0px;
-  margin: 0px;
-  width: 100%;
-}
-.navigatie {
-  list-style: none;
-  margin: 0;
-  width: 100%;
-}
-.navigatie li {
-  text-align: center;
-  float: left;
-  padding: 3px 0px 1px 0px;
-  color: rgb(94, 222, 245);
-  border: 0.9px solid crimson;
-  background: rgb(188, 188, 204);
-  width: 9%;
-}
+  .nav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  .nav a {
+    text-align: center;
+    width: 9%;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 
-.gegevens {
-  color: blueviolet;
+  .nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
 
-  margin: 0 auto;
-  width: 500px;
-}
+  .nav a.active {
+    background-color: #04aa6d;
+    color: white;
+  }
 
-.container {
-  border-radius: 5px;
-  background-color: whitesmoke;
-  padding: 20px;
-}
-.videoResponsive {
-  padding-bottom: 56.25%;
-  height: 0;
-  position: relative;
-  padding-top: 30px;
-  overflow: hidden;
-}
-.videoResponsive iframe,
-.videoResponsive object,
-.videoResponsive embed {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 65%;
-  height: 65%;
-}
-/* Dit grijze blok is een stuk code dat je kan copy pasten in een CSS bestand    
+  .gegevens {
+    color: blueviolet;
+
+    margin: 0 auto;
+    width: 500px;
+  }
+
+  .container {
+    border-radius: 5px;
+    background-color: whitesmoke;
+    padding: 20px;
+  }
+  .videoResponsive {
+    padding-bottom: 56.25%;
+    height: 0;
+    position: relative;
+    padding-top: 30px;
+    overflow: hidden;
+  }
+  .videoResponsive iframe,
+  .videoResponsive object,
+  .videoResponsive embed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 65%;
+    height: 65%;
+  }
+  /* Dit grijze blok is een stuk code dat je kan copy pasten in een CSS bestand    
      * en kan aanroepen in je HTML om te zien hoe het eruit gaat zien. 
      * Je kunt het ook alleen doorlezen als je het direct begrijpt.                              
      * /                                                                             
     /* Hiermee wordt de grootte van h1 voor het eerst aangepast van de standaard         
      * browserstyle. */
-h2 {
-  font-size: 50px;
-}
-/* Nu komt de browser aan bij de eerste media query. Als het venster een                                                      
+  h2 {
+    font-size: 50px;
+  }
+  /* Nu komt de browser aan bij de eerste media query. Als het venster een                                                      
    * minimale breedte van 768 pixels heeft wordt deze stijlspecificatie gelezen        
    * en uitgevoerd. Zo **niet**, dan worden ze **niet** gelezen en **niet** uitgevoerd. */
-@media (min-width: 768px) {
-  h2 {
-    font-size: 60px;
-  }
+  @media (min-width: 768px);
 }
 /* De tweede media query. Hetzelfde geldt weer voor de minimal breedte, maar         
    * nu voor 320 pixels. Let op! Een breedte van 800 pixels voldoet aan de eerste      

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- hier zet je de code in de head tags -->
+        <title> tryruby.nl </title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Raleway:100,200,600,700">
+        
+
+    </head>
+    <body  class="centered-wrapper">
+        <div class="vb-1">
+        <header >
+            <div class="nav">
+                <a href="index.html">Home</a>
+                <a href="tutorials.html">Tutorials</a>
+                <a href="contact.html">Contact</a>
+                <a href="bronvermelding.html">Bron</a>
+             </div></header>
+
+            <div class="container"><div class="box-model">
+       <br>
+        <br>
+        <h2 class="hobbys"> How To Configure your Linux box as a Static Router</h2>
+        <main class="box-model">
+            <table class="center">
+                  <p><h3>In this tutorial we are going to configure Linux server to act as a static router for Debian based systems.
+                    </h3>
+                    <ul>
+                        <li>Make sure you have sudo privileges.</li>
+                        <li>In order to construct your network architecture you will need to have a global view off your network.</li>
+                        <li>Configure the static routing table on your Linux router</li>
+                        <li>Enable IP forwarding(nic1 to nic2).</li>
+                        <li>Setup dhcp as a service in this case isc.dhcp.server</li>
+                    </ul>
+                    <ol>
+                        <li>Understanding your network architecture:
+                            In this case we are going to configure a router between two networks thus being,
+                            Install net-tools : apt install net-tools
+                            give the command : ifconfig
+                            <br>
+                                    <p><img src="images/ifconfig.jpg"></p>
+                                <br> for the first  NIC enp2s0 == 192.168.0.111
+                                <br>for the second NIC enp4s0 == 192.168.200.1
+                            </li>
+                        <li><br>Configuring the NIC’s
+                            <p>sudo nano /etc/network/interfaces
+                            # Defining the first interface</p>
+                            auto {interface_name}
+                            iface {interface_name} inet dhcp<br>
+                            <p># Defining the second interface
+                            auto {interface_name}</p>
+                            <p>iface {interface_name} inet static</p>
+                            address 192.168.200.1<br>netmask 255.255.255.0
+                            
+                            <p>Note : do not forget to add the "auto" directive, otherwise your interfaces won’t be raised at boot time.Save your file and restart your networking service:	systemctl restart networking.service;sudo systemctl status 
+                            networking.service</p> </li>   
+                        <li>Creating Static Routes using ip:
+                            run the “ip route” command
+                            sudo ip route</li>
+                            <p><image src="images/iproute.png"></image></p>
+                            <li><br> 
+                                Deleting existing static routes
+                                If static routers are already defined for your network interfaces, you will need to delete them : otherwise, you
+                                won’t be able to add new ones. To delete a route, use the "ip route" command with the “delete” option and specify the 
+                                route to be deleted. $ ip route delete {route} In our  case, we want to delete routes that are pointing to the<br>
+                                192.168.0.0/24 and 192.168.200.0/24 networks. 
+                                ip route delete 192.168.200.0/24
+                                ip route delete 192.168.0.0/24</li>
+                    </ol>
+                    ​ <p>Creating new static routes
+                First, you can create a route from the first network adapter IP address to the second network IP address.
+                <p>$ ip route add 192.168.200.0/24 via 192.168.0.111</p>
+                ​ Enabling IP forwarding on Linux</p>
+                <p>I. In order to enable IP forwarding, head over to the /etc/sysctl.conf file and look for the “net.ipv4.ip_forward” parameter.
+                $ vi /etc/sysctl.conf</p>
+                By default, this parameter is set to “0”, but you want to set it to “1” in order to enable IP forwarding.</p>
+                <p>II. Setup dhcp as a service in this case isc.dhcp.server
+                 Installing the DHCP server: apt install isc-dhcp-server</p>
+                <p>III. Configure the DHCP server
+                nano /etc/dhcp/dhcpd.conf
+                ddns-update-style none;
+                ## Set a domain name for your LAN ##
+                option domain-name "cascadiacommons.org";
+                ## Set DNS server IP address, you can set to your ISP's dns 	server too or use Google DNS server##
+                option domain-name-servers 8..8.8.8, 8.8.4.4;
+                Increase the lease time. The time is set in seconds:
+                default-lease-time 86400;
+                max-lease-time 604800;
+                The authoritative directive should be uncommented:
+                authoritative;</p>
+            
+            
+            
+            
+            
+                IV. set Subnet:
+                    subnet 192.168.200.0 netmask 255.255.255.0 {
+                    ## dhcp start  and end IP range ##
+                    range 192.168.200.100 192.168.200.215;
+                    option subnet-mask 255.255.255.0;     ## subnet 
+                    option broadcast-address 192.168.200.255; ## broadcast
+                    option routers 192.168.200.1; ## router IP
+            }
+                 
+            dont forget to reboot the system :
+            sudo shutdown -r now
+            Also needed a patch cable needed for testing the network
+        </table>   
+
+    <footer class="box-model">
+            <p>&copy; tryruby.nl</p>
+        </footer>
+    </main>
+</div></div></div> 
+
+
+    </body>
+</html>
